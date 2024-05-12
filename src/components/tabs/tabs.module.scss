@@ -1,0 +1,41 @@
+@import "../../styles/colors.scss";
+
+.tab {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 15px;
+  background-color: transparent;
+  border-top: 1px solid $gray;
+  border-right: 1px solid $gray;
+  &:hover {
+    color: $gray;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: $yellow-light;
+  }
+}
+
+.tabs {
+  margin-top: 70px;
+}
+
+.tabsButtons {
+  button {
+    border: 2px solid $yellow;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    &:hover {
+      background-color: $yellow-light;
+    }
+  }
+}
+.tabsContent {
+  border: 1px solid $yellow;
+  min-height: 286px;
+  font-size: 18px;
+  padding: 10px;
+}

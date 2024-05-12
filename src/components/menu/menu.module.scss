@@ -1,0 +1,30 @@
+@import "../../styles/colors.scss";
+.container {
+  width: 288px;
+}
+.menuTitle {
+  font-size: 14px;
+}
+.leftMenu {
+  padding: 28px 25px;
+  width: 288px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  li {
+    padding: 7px;
+    color: $black;
+    transition: 0.3s;
+      border-radius: 6px;
+      margin-bottom: 5px;
+    &:hover {
+      background-color: $gray;
+      color: $white;
+    }
+  }
+  .active {
+    background-color: $gray;
+    color: $white;
+    border-radius: 6px;
+  }
+}

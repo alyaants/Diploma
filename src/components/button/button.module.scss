@@ -1,0 +1,50 @@
+@import "../../styles/colors.scss";
+@mixin button {
+  padding: 17px 69px;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  border-radius: 12px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.primary {
+  @include button();
+  background-color: $main;
+  color: $yellow;
+  &:hover {
+    background-color: $yellow-light;
+    color: $main;
+  }
+}
+.secondary {
+  @include button();
+  background-color: $gray;
+  color: $white;
+  &:hover {
+    background-color: $light;
+  }
+}
+.error {
+  @include button();
+  color: $error;
+  &:hover {
+    border: 1px solid $error;
+  }
+}
+
+.disabled{
+  background-color: $gray;
+  color: $light;
+  pointer-events: none;
+}
+

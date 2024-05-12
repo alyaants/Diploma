@@ -1,0 +1,14 @@
+@import "../../../styles/colors.scss";
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  .link {
+    text-decoration: none;
+    color: $black;
+  }
+}

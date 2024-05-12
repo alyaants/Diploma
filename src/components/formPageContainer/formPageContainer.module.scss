@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+
+.container {
+  width: 789px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: $white;
+  padding: 45px 55px 65px 55px;
+  gap: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+  border: 1px solid $main;
+}
+.head {
+  display: flex;
+  align-items: center;
+  .close {
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+.formContainer {
+  flex: 1;
+  box-sizing: border-box;
+}
+.fieldsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 25px auto 10px;
+  border: 1px solid $yellow;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 12px;
+
+  .technic {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .price {
+    border-bottom: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+.button {
+  margin-top: 15px;
+}
+
+.errorValue {
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: $main;
+}
