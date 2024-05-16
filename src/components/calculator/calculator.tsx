@@ -13,6 +13,7 @@ const RentalCalculator: React.FC = () => {
   const [selectedCarName, setSelectedCarName] = useState<string>("");
   const [totalCost, setTotalCost] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [date, setDate] = useState<string>("");
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -39,10 +40,11 @@ const RentalCalculator: React.FC = () => {
     setSelectedCar(selectedCarId);
 
     // Находим название выбранной техники
-    const carName = carOptions
-      .map((carCategory) => data[carCategory])
-      .flatMap((category) => category.items)
-      .find((car) => car.id.toString() === selectedCarId)?.name || "";
+    const carName =
+      carOptions
+        .map((carCategory) => data[carCategory])
+        .flatMap((category) => category.items)
+        .find((car) => car.id.toString() === selectedCarId)?.name || "";
 
     setSelectedCarName(carName);
   };
@@ -57,7 +59,7 @@ const RentalCalculator: React.FC = () => {
     let total = time * carPrice;
 
     if (driver) {
-      total += 20;
+      total += 30;
     }
 
     setTotalCost(total);
@@ -86,6 +88,11 @@ const RentalCalculator: React.FC = () => {
   const handleCalculate = () => {
     calculateTotalCost();
   };
+  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const formattedValue = value.replace("T", " ");
+    setDate(formattedValue);
+  };
 
   return (
     <div className={styles.container}>
@@ -107,9 +114,7 @@ const RentalCalculator: React.FC = () => {
       </div>
       {selectedCar && (
         <div className={styles.info}>
-          <p>
-            Выбранный автомобиль: {selectedCarName}
-          </p>
+          <p>Выбранный автомобиль: {selectedCarName}</p>
           <p>
             Цена за час аренды:{" "}
             {
@@ -121,6 +126,18 @@ const RentalCalculator: React.FC = () => {
           </p>
         </div>
       )}
+      <div className={styles.date}>
+        <label htmlFor="date">Дата:</label>
+        <div>
+          <input
+            type="datetime-local"
+            id="localdate"
+            name="date"
+            value={date}
+            onChange={handleDateChange}
+          />
+        </div>
+      </div>
       <div className={styles.time}>
         <label htmlFor="time">Время аренды:</label>
         <div>
@@ -145,7 +162,7 @@ const RentalCalculator: React.FC = () => {
             checked={driver}
             onChange={handleDriverChange}
           />
-          <span> +20 BYN</span>
+          <span> +30 BYN</span>
         </div>
       </div>
       <div className={styles.buttonsWrap}>
@@ -166,6 +183,8 @@ const RentalCalculator: React.FC = () => {
           onClose={closeModal}
           priceCalculate={parseFloat(totalCost.toFixed(2))}
           selectedTechnic={selectedCarName}
+          date={date}
+          time={time}
         />
       </div>
       <div className={styles.total}>

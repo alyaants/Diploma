@@ -8,6 +8,8 @@ export interface ModalProps {
   selectedTechnic: string;
   priceSelectedTechnic?: number;
   priceCalculate?: number;
+  date?: string;
+  time?:number;
 }
 
 const Modal = (props: ModalProps) => {
@@ -23,6 +25,7 @@ const Modal = (props: ModalProps) => {
           onClose={props.onClose}
           selectedTechnic={props.selectedTechnic}
           price={props.priceSelectedTechnic || props.priceCalculate || 0}
+          date={props.date}
         />
       </div>
     </div>

@@ -115,9 +115,26 @@ label {
     font-weight: 500;
     transition: 0.3s;
     background-color: $yellow;
-    &:hover{
-    background-color: $main;
-    color: $yellow;
+    &:hover {
+      background-color: $main;
+      color: $yellow;
+    }
+  }
+}
+
+.date {
+  margin-bottom: 20px;
+  input {
+    font-size: 16px;
+    margin-top: 5px;
+    width: 200px;
+    height: 30px;
+    padding: 10px 5px;
+    border: 1px solid rgba(255, 0, 0, 0);
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0px $gray;
+    &:focus {
+      outline: none;
     }
   }
 }

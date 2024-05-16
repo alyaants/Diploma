@@ -15,6 +15,8 @@ type FormContainerProps = {
   onClose: () => void;
   selectedTechnic?: string;
   price: number;
+  date?: string;
+  time?:number;
 };
 
 const FormContainer = (props: FormContainerProps) => {
@@ -109,6 +111,7 @@ const FormContainer = (props: FormContainerProps) => {
               Выбранная техника: {props.selectedTechnic}
             </p>
             <p className={style.price}>Стоимость: {props.price} BYN</p>
+            {props.date && <p className={style.date}>Дата: {props.date}</p>}
           </div>
           <Input
             title={"Имя"}
