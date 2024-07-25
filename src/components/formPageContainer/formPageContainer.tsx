@@ -136,7 +136,6 @@ const FormContainer = (props: FormContainerProps) => {
             onChange={(e) => setPhone(e.target.value)}
           />
           {phoneError && <p className={style.errorValue}>{phoneError}</p>}
-
           <Button
             type={ButtonTypes.Primary}
             title={props.btnTitle}

@@ -8,13 +8,11 @@
   box-shadow: 0 0 3px 0px $gray;
   border-radius: 5px;
 }
-
 .select {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   margin-top: 20px;
-
   select {
     border-radius: 5px;
     width: 100%;
@@ -29,7 +27,6 @@
     }
   }
 }
-
 .time {
   display: flex;
   flex-direction: column;
@@ -48,7 +45,6 @@
     }
   }
 }
-
 .driver {
   display: flex;
   flex-direction: column;
@@ -70,24 +66,20 @@
     }
   }
 }
-
 label {
   font-size: 18px;
   font-weight: 500;
 }
-
 .info {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 500;
 }
-
 .buttonsWrap {
   display: flex;
   justify-content: space-evenly;
   width: 80%;
   margin: 0 auto 20px;
-
   .calculate {
     width: 350px;
     padding: 7px 5px;

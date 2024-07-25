@@ -39,7 +39,6 @@ const RentalCalculator: React.FC = () => {
     const selectedCarId = event.target.value;
     setSelectedCar(selectedCarId);
 
-    // Находим название выбранной техники
     const carName =
       carOptions
         .map((carCategory) => data[carCategory])
